@@ -7,7 +7,7 @@ var Greet = React.createClass ({
   },
   getInitialState: function() {
     return {
-          name = this.props.name;
+          name:  this.props.name
       };
   },
   onButtonClick:function(e){
@@ -18,10 +18,10 @@ var Greet = React.createClass ({
       name : name
     });
 
-    alert (name);
+    alert(name);
   },
   render: function (){
-    var name = this.state.name;
+    var name = this.props.name;
     var message = this.props.message;
 
     return (
