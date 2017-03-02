@@ -1,19 +1,27 @@
 var Greet = React.createClass ({
   getDefaultProps: function () {
-    return (
-      {
+    return ({
         name: 'React',
         message: 'Test Message'
-      }
-    )
+      });
+  },
+  getInitialState: function() {
+    return {
+          name = this.props.name;
+      };
   },
   onButtonClick:function(e){
     e.preventDefault ();
     var name = this.refs.inputName.value;
+
+    this.setState ({
+      name : name
+    });
+
     alert (name);
   },
   render: function (){
-    var name = this.props.name;
+    var name = this.state.name;
     var message = this.props.message;
 
     return (
